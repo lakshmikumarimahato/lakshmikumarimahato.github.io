@@ -1,5 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Section Styling */
+#timeline {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Heading Styling */
+#timeline h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #faef0d;
+    letter-spacing: 1px;
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.timeline-item:hover {
+    transform: scale(1.03);
+}
+
+/* Timeline Dots */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #007BFF;
+    border-radius: 50%;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Vertical Line for Desktop */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #007BFF;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Alternating Timeline Items */
+.timeline-item:nth-child(odd) {
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+    text-align: right;
+    padding-right: 50px;
+}
+
+/* Adjust Dot Position */
+.timeline-item:nth-child(odd)::before {
+    left: -20px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: auto;
+    right: -20px;
+}
+
+/* Timeline End */
+.timeline-end {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2fe41b;
+}
+
+/* ✅ Fully Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .timeline-item {
+        width: 90%;
+        text-align: left;
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .timeline-item::before {
+        left: -10px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        align-self: flex-start;
+        padding-left: 30px;
+    }
+}
+
+
+
 
 /* Education Section - Professional Styling */
 #education {
